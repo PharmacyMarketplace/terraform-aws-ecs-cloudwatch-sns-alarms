@@ -82,7 +82,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_utilization_low" {
   metric_name         = "CPUUtilization"
   namespace           = "AWS/ECS"
   period              = var.cpu_utilization_low_period
-  statistic           = "Average"
+  statistic           = "Maximum"
   threshold           = local.thresholds["CPUUtilizationLowThreshold"]
 
   alarm_description = format(
